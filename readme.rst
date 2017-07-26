@@ -1,70 +1,17 @@
-###################
-What is CodeIgniter
-###################
+blog_prueba
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Este es un blog creado para eclass por Alvaro Maurelia, el domingo 26/7/2017 (tiempo: aprox 4-5 horas) Está creado con el framework CodeIgniter El controlador principal se llama publicaciones Sus funciones principales son:
 
-*******************
-Release Information
-*******************
+ver_publicaciones(argumento) ( si lo has instalado en localhost/prueba su ubicación es http://localhost/blog_prueba/index.php/publicaciones/ver_publicaciones ) Esta función muestra una lista de las publicaciones existentes en orden inverso a su última actualización, si hay más de 5 publicaciones las pagina en la parte inferior, al hacer click en "leer más" muestra más texto Su argumento es la paginación (por defecto 1)
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+ver_publicacion(argumento) Permite leer la publicación de su argumento
 
-**************************
-Changelog and New Features
-**************************
+login Se ingresa haciendo click en el botón ingresar, si las credenciales son correctas se crean las variables de session correspondientes El menú cambia si existen variables de session El usuario por defecto es admin password admin
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+logout Se ingresa haciendo click en el botón salir (cuando se está logeado) Esta función destruye las variables de session
 
-*******************
-Server Requirements
-*******************
+crear_publicacion ( http://localhost/blog_prueba/index.php/publicaciones/crear_publicacion ) Solo se puede ingresar en esta función si te encuentras logeado, caso contrario te redirigirá a ver_publicaciones Esta función te muestra una vista con un formulario simple, el cual te permitirá crear una publicación nueva
 
-PHP version 5.6 or newer is recommended.
+El proyecto ha sido creado dentro del poco tiempo libre que tiene el autor, por lo cual es posible que tenga algunos problemas, estos son fáciles de solucionar si se cuenta con un poco más de tiempo
 
-It should work on 5.4.8 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Para cargar los datos de prueba en la base de datos se adjunta un archivo .sql Por defecto se ha utilizado una base de datos simples con user:root y sin password Si se desea cambiar las credenciales de la BD es necesario ingresar a aplication/config/database.php y editar los campos de $db['default'] con los de tu base de datos custom
